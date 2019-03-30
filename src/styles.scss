@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { 
+    height: 100%; 
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: whitesmoke;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.page-title{
+    padding: 20px;
+    color: #673ab7;
+    font-size: 30px;
+  }
+
+
+  .blogs{
+    padding: 50px 0;
+}
+
+.blog-item{
+    margin: 20px;   
+    img{
+        height: 200px;
+        object-fit: cover;
+    }
+    
+}
+
+.centered{
+    padding: 30px 20px;
+    text-align: right;
+    a{
+        // display: block;
+    }
+}
+
+.mat-card-header-text{
+    margin: 0!important;
+}
+.mat-figure{
+    display:block!important;
+}
+
+.post{
+    min-height: 100%;
+    p{
+        padding: 20px;
+    }
+}

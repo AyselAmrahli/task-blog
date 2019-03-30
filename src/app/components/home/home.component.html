@@ -1,0 +1,42 @@
+<section class="home">
+  <div class="container">
+    <h3 class="page-title">Homepage</h3>
+
+    <!-- loader untill fetching -->
+    <app-spinner *ngIf="loading"></app-spinner>
+
+      <mat-grid-list cols="3" rowHeight="3:3">
+
+
+
+          <mat-grid-tile *ngFor="let post of posts|slice:0:3">
+
+              <mat-card class="blog-item">
+                
+                <mat-card-header>
+                  <mat-card-title>{{post.title}}</mat-card-title>
+                </mat-card-header>
+               
+                <mat-card-content>
+                  <p class="truncate">
+                    {{( post.body.length>20 ) ? (post.body | slice:0:20) + '...':(post.body)}}
+                  </p>
+      
+                  <mat-card-actions>
+                    <a [routerLink]="['/posts',post.id]"  mat-raised-button color="accent">More <mat-icon>trending_flat</mat-icon>
+                    </a>
+                  </mat-card-actions>
+                </mat-card-content>
+      
+              </mat-card>
+              
+          </mat-grid-tile>
+
+        </mat-grid-list>
+
+         
+        <div class="centered">
+            <a href="#" routerLink="/posts" mat-raised-button color="primary">All Posts</a>
+        </div>
+  </div>
+</section>
