@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PostComponent implements OnInit {
   post: Observable<Post[]>;
   postId: number;
+  loading: boolean = true;
   constructor(
     private postService: PostService,
     private route: ActivatedRoute,
@@ -27,8 +28,10 @@ export class PostComponent implements OnInit {
 
     this.postService.getSpesificPost(this.postId)
     .subscribe(response => {
-      this.post = response.body
-      console.log(response)});
+      this.post = response.body;
+      this.loading = false;
+    },
+    error => console.log(error));
   }
 
 }

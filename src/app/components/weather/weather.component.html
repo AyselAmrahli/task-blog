@@ -1,0 +1,13 @@
+    <mat-card>
+
+        <app-spinner *ngIf="loading"></app-spinner>
+
+        <div class="weather-info" *ngIf="!loading">
+            <p class="city-name">{{weather.name}}</p>
+            <p class="icon">{{weather.weather[0].main}}<img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png" alt=""></p>
+            <p>{{weather.main.temp}}&#8451;</p>
+            <span>Pres: {{weather.main.pressure}}</span>
+            <span>Humid: {{weather.main.humidity}}%</span>
+        </div>
+
+    </mat-card>

@@ -1,25 +1,28 @@
-<mat-toolbar color="primary">
-<span>My Blog</span>
+<mat-toolbar>
+    
+
 <span class="spacer"></span>
 
     <a 
     routerLink="/" 
     routerLinkActive="active" 
     [routerLinkActiveOptions]="{ exact: true }" 
-    mat-button>Home <mat-icon>home</mat-icon></a>
+    mat-button>{{ 'home' | translate }} <mat-icon>home</mat-icon></a>
 
     
     <a 
     routerLink="/posts" 
     routerLinkActive="active" 
-    mat-button>Posts <mat-icon>book</mat-icon></a>
+    mat-button>{{ 'posts' | translate }} <mat-icon>book</mat-icon></a>
 
 
     
-    <button mat-button [matMenuTriggerFor]="menu">Language <mat-icon>language</mat-icon></button>
+    <a mat-button [matMenuTriggerFor]="menu">{{ 'language' | translate }} <mat-icon>language</mat-icon></a>
     <mat-menu #menu="matMenu">
-        <a href="#" mat-menu-item>AZ</a>
-        <a href="#" mat-menu-item>EN</a>
-        <a href="#" mat-menu-item>KR</a>
+        <a (click)="switchLanguage('az')" mat-menu-item>AZ</a>
+        <a (click)="switchLanguage('en')" mat-menu-item>EN</a>
+        <a (click)="switchLanguage('kr')" mat-menu-item>KR</a>
     </mat-menu>
 </mat-toolbar>
+
+

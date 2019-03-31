@@ -2,6 +2,8 @@
 
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'assets/sass/mixins';
+
 
 html, body { 
     height: 100%; 
@@ -17,20 +19,29 @@ body {
     margin: 0 auto;
 }
 
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    .grid-column{
+        width: 33%;
+        @include breakpoint(visible-xs) {
+            width: 100%;
+        }
+
+    }
+}
+
 .spacer {
     flex: 1 1 auto;
   }
 
 .page-title{
     padding: 20px;
-    color: #673ab7;
+    color: #ee6e73;
     font-size: 30px;
+    text-align: center;
   }
 
-
-  .blogs{
-    padding: 50px 0;
-}
 
 .blog-item{
     margin: 20px;   
@@ -43,18 +54,10 @@ body {
 
 .centered{
     padding: 30px 20px;
-    text-align: right;
-    a{
-        // display: block;
-    }
+    text-align: center;
 }
 
-.mat-card-header-text{
-    margin: 0!important;
-}
-.mat-figure{
-    display:block!important;
-}
+
 
 .post{
     min-height: 100%;
@@ -62,3 +65,22 @@ body {
         padding: 20px;
     }
 }
+
+// material default style change
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #ee6e73!important;
+}
+.mat-card-header-text{
+    margin: 0!important;
+}
+.mat-figure{
+    display:block!important;
+}
+.mat-toolbar{
+    background-color: #ee6e73;
+    color: #ffffff;
+    a{
+        color: #ffffff;
+    }
+}
+

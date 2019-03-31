@@ -1,15 +1,17 @@
 <section class="home">
-  <div class="container">
-    <h3 class="page-title">Homepage</h3>
+    <div class="page-title-wrapper">
+        <div class="container">
+            <h3 class="page-title">{{'home' | translate}}</h3>
+        </div>
+    </div>
 
+  <div class="container">
     <!-- loader untill fetching -->
     <app-spinner *ngIf="loading"></app-spinner>
 
-      <mat-grid-list cols="3" rowHeight="3:3">
+      <div class="row">
 
-
-
-          <mat-grid-tile *ngFor="let post of posts|slice:0:3">
+          <div class="grid-column" *ngFor="let post of posts|slice:0:3">
 
               <mat-card class="blog-item">
                 
@@ -18,25 +20,25 @@
                 </mat-card-header>
                
                 <mat-card-content>
-                  <p class="truncate">
+                  <p>
                     {{( post.body.length>20 ) ? (post.body | slice:0:20) + '...':(post.body)}}
                   </p>
       
                   <mat-card-actions>
-                    <a [routerLink]="['/posts',post.id]"  mat-raised-button color="accent">More <mat-icon>trending_flat</mat-icon>
+                    <a [routerLink]="['/posts',post.id]"  mat-raised-button color="accent">{{"more" | translate}} <mat-icon>trending_flat</mat-icon>
                     </a>
                   </mat-card-actions>
                 </mat-card-content>
       
               </mat-card>
               
-          </mat-grid-tile>
+          </div>
 
-        </mat-grid-list>
+      </div>
 
          
         <div class="centered">
-            <a href="#" routerLink="/posts" mat-raised-button color="primary">All Posts</a>
+            <a href="#" routerLink="/posts" mat-raised-button>{{'all_posts' | translate}}</a>
         </div>
   </div>
 </section>

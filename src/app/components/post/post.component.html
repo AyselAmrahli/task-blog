@@ -1,8 +1,13 @@
 <section class="post">
   <div class="container">
-      <h3 class="page-title">{{post.title}}</h3>
-      <p>
-        {{post.body}}      
-      </p>
+
+    <app-spinner *ngIf="loading"></app-spinner>
+
+      <div class="post-detail" *ngIf="!loading">
+          <h3 class="page-title">{{post.title}}</h3>
+          <p>
+            {{post.body}}      
+          </p>
+      </div>
   </div>
 </section>

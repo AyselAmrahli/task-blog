@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    public languageService: LanguageService,
+  ) { }
+
+  switchLanguage(lang) {
+    this.languageService.switchLanguage(lang);
+  }
+
 
   ngOnInit() {
+
   }
 
 }

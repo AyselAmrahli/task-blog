@@ -13,6 +13,7 @@ export class UrlsService {
     return {
       posts: '' + this.ROOT_URL + '/posts',
       post: '' + this.ROOT_URL + '/posts/' + param +'',
+      weather: 'https://api.openweathermap.org/data/2.5/weather?id=587084&units=metric&appid=4cfef4321c27c347dbda1885b179773d'
     };
   }
 }

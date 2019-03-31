@@ -1,0 +1,33 @@
+@import '../../../assets/sass/mixins';
+
+
+.mat-card{
+    position: absolute;
+    top:0;
+    left: 20px;
+
+    @include breakpoint(visible-xs){
+        position: relative;
+    }
+    
+}
+
+.weather-info{
+    p{
+        font-size: 16px;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .icon{
+        display: flex;
+        align-items: center;
+
+    }
+    span{
+        font-size: 12px;
+        font-weight: 300;
+        display: block;
+        line-height: normal;
+    }
+}
