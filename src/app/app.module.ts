@@ -18,6 +18,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { WeatherComponent } from './components/weather/weather.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PostComponent,
     SpinnerComponent,
     WeatherComponent,
+    PageTitleComponent,
   ],
   imports: [
     BrowserModule,

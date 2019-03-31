@@ -11,6 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 export class HomeComponent implements OnInit {
   posts: Observable<Post[]>;
   loading: Boolean = true;
+  
   constructor(
     private postService: PostService
 
